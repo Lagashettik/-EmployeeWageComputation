@@ -5,21 +5,32 @@ public class EmpWageBuilder {
 
 	int WagePerHour=20;
 	int NoOfHours=0;
-	int Month=20;
-	int empCheck=(int) Math.floor(Math.random() * 10) % 2;
+	int TotalHours=100;	// Max working Hours is 100 in One Month
+	int TotalDays=20;		// Max Days in Month is 20 Days
+	int day=1;
 
-	switch (empCheck) {
-	case 1:
-		System.out.println("Employee is Full Time\nFull Time");
-		NoOfHours=8;
-		break;
-	case 0:
-		System.out.println("Employee is Part Time\nPart Time");
-		NoOfHours=4;
-		break;
+	while( day<=TotalDays ){
+		int empCheck=(int) Math.floor(Math.random() * 10) % 2;
+			//empCheck=0 then Employee is Part Time
+			//empCheck=1 then Employee is Full Time
+
+		switch (empCheck) {
+		case 1:
+			NoOfHours+=8;
+			break;
+		case 0:
+			NoOfHours+=4;
+			break;
+		}
+
+		if( TotalHours <= NoOfHours ){
+			break;}
+
+		day++;
 	}
-	int Payment= WagePerHour * NoOfHours * Month;
-	System.out.print("\bPayment for One Month "+Payment);
-	
+
+	int Payment= WagePerHour * NoOfHours * day;
+	System.out.println("Total Payment of Employee is "+Payment);
+
 	}
 }
