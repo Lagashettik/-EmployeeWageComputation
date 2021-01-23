@@ -6,7 +6,7 @@ public class EmpWageBuilder {
 	int WagePerHour=20;
 	int NoOfHours=0;
 	int TotalHours=100;	// Max working Hours is 100 in One Month
-	int TotalDays=20;		// Max Days in Month is 20 Days
+	int TotalDays=20;	// Max Days in Month is 20 Days
 	int day=1;
 
 	while( day<=TotalDays ){
